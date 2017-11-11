@@ -1,14 +1,11 @@
 package com.zwh.mobilesafe;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 /**
  * Created by Administrator on 2017/11/10 0010.
@@ -49,7 +46,6 @@ class Setup3Activity extends Activity{
         super.onActivityResult(requestCode,resultCode,data);
     }
     //点击“下一步”执行的方法
-    @SuppressLint("WrongConstant")
     public void next(View view){
         String number = et_setup3_number.getText().toString().trim();
         if(TextUtils.isEmpty(number)){
@@ -57,7 +53,7 @@ class Setup3Activity extends Activity{
             return;
         }
         //将EditText中的安全号码持久化起来，也方便数据的回显
-        SharedPreferences.Editor editor = sp.edit();
+        Editor editor = sp.edit();
         editor.putString("safemuber", number);
         editor.commit();
 

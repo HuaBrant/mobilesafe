@@ -7,8 +7,3 @@
 /build
 /captures
 .externalNativeBuild
-libs/
-src/main/res/drawable-hdpi/
-src/main/res/drawable-mdpi/
-src/main/res/drawable-xxhdpi/
-src/main/res/drawable-xxxhdpi/
