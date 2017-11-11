@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">mobilesafe</string>
+    <string name="entryBlackNumber">请输入黑名单号码</string>
+    <string name="interceptPhone">拦截电话</string>
+    <string name="interceptMessage">拦截短信</string>
+    <string name="add">添加</string>
 </resources>
