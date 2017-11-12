@@ -274,7 +274,14 @@ class CallSmsSafeActivity extends Activity{
         blackNumbers.remove(blackNumber);
         adapter.notifyDataSetChanged();
     }
-
+    /**
+     * 为“添加黑名单号码”注册的点击事件
+     * 添加一条黑名单号码
+     * @param view
+     */
+    public void addBlackNumber(View view) {
+        showBlackNumberDialog(0, 0);
+    }
     private class BlackNumberAdapter extends BaseAdapter{
         @Override
         public int getCount() {
@@ -294,7 +301,7 @@ class CallSmsSafeActivity extends Activity{
         @Override
         public View getView(int i, View convertview, ViewGroup viewGroup) {
             View view;
-            ViewHolder holder;
+            ViewHolder holder ;
             if (convertview == null){
                 Log.i(TAG, "创建新的view对象: ");
                 //将Item转成View对象
@@ -328,8 +335,9 @@ class CallSmsSafeActivity extends Activity{
     /**
      * 将Item中的控件使用static修饰，被static修饰的类的字节码在JVM中只会存在一份。tv_number与tv_mode在栈中也会只存在一份
      */
-    private class ViewHolder {
+    private static class ViewHolder {
         TextView tv_number;
         TextView tv_mode;
     }
+
 }
