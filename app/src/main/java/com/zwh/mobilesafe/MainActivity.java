@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         gv_main = (GridView) findViewById(R.id.gv_main);
         gv_main.setAdapter(new MianAdapter(this));
-        gv_main.setOnClickListener(new AdapterView.OnItemClickListener(){
+        gv_main.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
