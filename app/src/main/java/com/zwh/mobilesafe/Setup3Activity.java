@@ -14,7 +14,7 @@ import android.widget.Toast;
  * Created by Administrator on 2017/11/10 0010.
  */
 
-class Setup3Activity extends Activity{
+public class Setup3Activity extends Activity{
     private EditText et_setup3_number;//设置绑定的安全号码
     private SharedPreferences sp;//用于存储安全号码及安全号码的回显
     @Override

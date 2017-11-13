@@ -33,7 +33,7 @@ import java.util.List;
  * Created by Administrator on 2017/11/11 0011.
  */
 @SuppressLint("Registered")
-class CallSmsSafeActivity extends Activity{
+public class CallSmsSafeActivity extends Activity{
     protected  static final int LOAD_DATA_FINISH = 40;
     public static final String TAG = "CallSmsSafeActivity";
     //用于展现出所有的黑名单号码

@@ -8,7 +8,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/appicon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -20,7 +20,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AntiVirusActivity">
+        </activity>
+        <activity android:name=".AppManagerActivity">
+        </activity>
+        <activity android:name=".Setup1Activity">
+        </activity>
         <activity android:name=".Setup2Activity">
+        </activity>
+        <activity android:name=".Setup3Activity">
+        </activity>
+        <activity android:name=".Setup4Activity">
+        </activity>
+        <activity android:name=".AtoolsActivity">
+        </activity>
+        <activity android:name=".CallSmsSafeActivity">
+        </activity>
+        <activity android:name=".CleanCacheActivity">
+        </activity>
+        <activity android:name=".LostProtectedActivity">
+        </activity>
+        <activity android:name=".SettingCenterActivity">
+        </activity>
+        <activity android:name=".SlesctContactActivity">
+        </activity>
+         <activity android:name=".TaskManagerActivity">
+        </activity>
+         <activity android:name=".TrafficInfoActivity">
         </activity>
 
     </application>

@@ -22,7 +22,7 @@ import java.util.List;
  * Created by Administrator on 2017/11/10 0010.
  */
 
-class SlesctContactActivity extends Activity{
+public class SlesctContactActivity extends Activity{
     private ListView lv_select_contact;
     private ContactInfoProvider provider;
     private List<ContactInfo> infos;

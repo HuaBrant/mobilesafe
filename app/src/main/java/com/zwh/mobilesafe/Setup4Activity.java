@@ -19,7 +19,7 @@ import com.zwh.mobilesafe.receiver.MyAdmin;
  * Created by Administrator on 2017/11/11 0011.
  */
 
-class Setup4Activity extends Activity{
+public class Setup4Activity extends Activity{
     private CheckBox cb_setup4_protect;
     private SharedPreferences sp;
 

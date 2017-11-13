@@ -27,7 +27,7 @@ import java.util.List;
  * Created by Administrator on 2017/11/11 0011.
  */
 
-class TaskManagerActivity extends Activity implements View.OnClickListener {
+public class TaskManagerActivity extends Activity implements View.OnClickListener {
     private boolean showUserApp;
     private UserAdapter userAdapter;
     private SystemAdapter systemAdapter;

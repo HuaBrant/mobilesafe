@@ -47,7 +47,7 @@ import java.util.List;
  * Created by zwh on 2017/11/11 0011.
  */
 
-class AppManagerActivity extends Activity implements View.OnClickListener{
+public class AppManagerActivity extends Activity implements View.OnClickListener{
     protected static final int LOAD_APP_FINISH = 50;
     private static final String TAG ="AppManagerActivity";
     private TextView tv_appmanager_men_avail;//show mobile available memory
