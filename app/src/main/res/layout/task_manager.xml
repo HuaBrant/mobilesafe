@@ -62,6 +62,7 @@
             android:orientation="horizontal" >
 
             <Button
+                android:id="@+id/bt_select_all_task"
                 android:layout_width="0dip"
                 android:onClick="selectAll"
                 android:layout_height="wrap_content"
@@ -72,6 +73,7 @@
                 android:textSize="18sp" />
 
             <Button
+                android:id="@+id/bt_key_clear_task"
                 android:onClick="oneKeyClear"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
