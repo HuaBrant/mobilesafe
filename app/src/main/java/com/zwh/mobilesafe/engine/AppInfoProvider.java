@@ -22,7 +22,7 @@ public class AppInfoProvider {
     /**
      * get all appInfoS
      */
-    public List<AppInfo> getInstallenApps(){
+    public List<AppInfo> getInstalledApps(){
         //return all app packageInfoS ;param PackageManager.GET_UNINSTALLED_PACKAGES :uninstall app but not clean info
         List<PackageInfo> packageInfos =pm.getInstalledPackages(PackageManager.GET_UNINSTALLED_PACKAGES);
         List<AppInfo> appinfos = new ArrayList<AppInfo>();
