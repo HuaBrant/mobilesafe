@@ -16,6 +16,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.StatFs;
 import android.support.annotation.Nullable;
+import android.text.format.Formatter;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -26,13 +27,10 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.PopupWindow;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.text.format.Formatter;
 
 import com.zwh.mobilesafe.domain.AppInfo;
 import com.zwh.mobilesafe.engine.AppInfoProvider;
@@ -180,8 +178,9 @@ public class AppManagerActivity extends Activity implements View.OnClickListener
         new Thread(){
             @Override
             public void run() {
-                AppInfoProvider provider = new AppInfoProvider(AppManagerActivity.this);
-                appInfos =provider.getInstallenApps();
+                AppInfoProvider provider = new AppInfoProvider(
+                        AppManagerActivity.this);
+                appInfos =provider.getInstalledApps();
                 initAppInfo();
                 Message message =Message.obtain();
                 message.what = LOAD_APP_FINISH;

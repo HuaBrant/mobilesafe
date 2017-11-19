@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.SearchManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -182,6 +181,7 @@ import com.zwh.mobilesafe.utils.Md5Encoder;
                 }else {
                     Toast.makeText(this,"密码不正确",1).show();
                 }
+                break;
             case R.id.tv_lost_protect_reentry_setup:
                 Intent reentryIntent = new Intent(this,Setup1Activity.class);
                 startActivity(reentryIntent);
