@@ -31,12 +31,13 @@ public class ProcessInfoProvider {
              ) {
             ProcessInfo processInfo = new ProcessInfo();
             processInfo.setPid(info.pid);
-            processInfo.setPackname(info.processName);
+            String packName =info.processName;
+            processInfo.setPackname(packName);
             processInfo.setMemsize(activityManager.getProcessMemoryInfo(new
-            int[]{info.pid})[0].getTotalPrivateDirty());
+            int[]{info.pid})[0].getTotalPrivateDirty()*1024);
             try {
                 ApplicationInfo applicationInfo =packageManager
-                        .getApplicationInfo(info.processName,0);
+                        .getApplicationInfo(packName,0);
                 if (filterApp(applicationInfo)){
                     processInfo.setUserprocess(true);
                 }else {
@@ -45,12 +46,13 @@ public class ProcessInfoProvider {
                 processInfo.setIcon(applicationInfo.loadIcon(packageManager));
                 processInfo.setAppname(applicationInfo.loadLabel(packageManager)
                         .toString());
-            } catch (PackageManager.NameNotFoundException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
                 processInfo.setUserprocess(false);
                 processInfo.setAppname(info.processName);
                 processInfo.setIcon(context.getResources()
                         .getDrawable(R.mipmap.ic_launcher));
+                processInfo.setAppname(packName);
             }
             processInfos.add(processInfo);
             processInfo=null;

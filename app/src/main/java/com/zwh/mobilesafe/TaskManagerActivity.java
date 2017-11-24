@@ -54,8 +54,8 @@ public class TaskManagerActivity extends Activity implements View.OnClickListene
         provider = new ProcessInfoProvider(this);
         userProcessInfos = new ArrayList<ProcessInfo>();
         systemProcessInfos = new ArrayList<ProcessInfo>();
-        List<ProcessInfo> allRuningProcessIndos = provider.getProcessInfos();
-        for (ProcessInfo info : allRuningProcessIndos) {
+        List<ProcessInfo> allRunningProcessInfos = provider.getProcessInfos();
+        for (ProcessInfo info : allRunningProcessInfos) {
             if (info.isUserprocess()) {
                 userProcessInfos.add(info);
             } else {
@@ -298,7 +298,7 @@ public class TaskManagerActivity extends Activity implements View.OnClickListene
                 view =convertView;
                 holder =(ViewHolder)view.getTag();
             }
-            ProcessInfo info = userProcessInfos.get(i);
+            ProcessInfo info = systemProcessInfos.get(i);
             if (info.getPackname().equals(getPackageName())){
                 holder.cb_manager.setVisibility(View.INVISIBLE);
             }else {

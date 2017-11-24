@@ -81,7 +81,7 @@ public class AppManagerActivity extends Activity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_manager);
         tv_appmanager_men_avail =findViewById(R.id.tv_appmanager_mem_avail);
-        tv_appmanager_men_avail  =findViewById(R.id.tv_appmanager_sd_avail);
+        tv_appmanager_sd_avail  =findViewById(R.id.tv_appmanager_sd_avail);
         ll_loading = findViewById(R.id.ll_appmanager_loading);
         lv_appmanager = findViewById(R.id.lv_appmanager);
         tv_appmanager_men_avail.setText("内存可用"+getAvailROMSize());
@@ -98,9 +98,9 @@ public class AppManagerActivity extends Activity implements View.OnClickListener
                 dismissPopupWindow();
                 View contentView = View.inflate(getApplicationContext(),
                         R.layout.popup_item,null);
-                ll_uninstall = findViewById(R.id.ll_popup_uninstall);
-                ll_start = findViewById(R.id.ll_popup_start);
-                ll_share = findViewById(R.id.ll_popup_share);
+                ll_uninstall = contentView.findViewById(R.id.ll_popup_uninstall);
+                ll_start = contentView.findViewById(R.id.ll_popup_start);
+                ll_share = contentView.findViewById(R.id.ll_popup_share);
                 //set listener for uninstall start share
                 ll_share.setOnClickListener(AppManagerActivity.this);
                 ll_uninstall.setOnClickListener(AppManagerActivity.this);
@@ -279,7 +279,7 @@ public class AppManagerActivity extends Activity implements View.OnClickListener
     private void shareApplication() {
         Intent intent = new Intent();
         intent.setAction("android.intent.action.SEND");
-        intent.addCategory("android.intent.categroy.DEFAULT");
+        intent.addCategory("android.intent.category.DEFAULT");
         intent.setType("text/plain");
         intent.putExtra("subject","分享的标题");
         intent.putExtra("sms_body", "推荐你使用一款软件"+clickedpackname);
@@ -351,7 +351,7 @@ public class AppManagerActivity extends Activity implements View.OnClickListener
                 textView.setTextSize(20);
                 textView.setText("用户程序 (" + userappInfos.size() + ")");
                 return textView;
-            }else if (i < userappInfos.size()){
+            }else if (i <= userappInfos.size()){
                 int newi = i-1;
                 View view;
                 ViewHolder holder;

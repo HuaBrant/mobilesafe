@@ -1,7 +1,7 @@
 package com.zwh.mobilesafe;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -9,7 +9,7 @@ import android.widget.GridView;
 
 import com.zwh.mobilesafe.adapter.MianAdapter;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     private GridView gv_main;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
                     case 2: //程序管理
                         Intent appManagerIntent = new Intent(MainActivity.this,AppManagerActivity.class);
                         startActivity(appManagerIntent);
+                        break;
                     case 3: //进程管理
                         Intent taskManagerIntent = new Intent(MainActivity.this,TaskManagerActivity.class);
                         startActivity(taskManagerIntent);
