@@ -25,7 +25,7 @@ public class ContactInfoProvider {
      */
     public List<ContactInfo> getContactInfos(){
         List<ContactInfo> infos = new ArrayList<ContactInfo>();//将所有联系人存入该集合
-        Uri uri = Uri.parse("content://com.android.contacts/rew_raw_contacts");
+        Uri uri = Uri.parse("content://com.android.contacts/raw_contacts");
         Uri datauri = Uri.parse("content://com.android.contacts/data");
         Cursor cursor = context.getContentResolver().query(uri,
                 new String[]{"contact_id"},null,null,null);

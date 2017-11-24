@@ -40,7 +40,7 @@ public class BlackNumberDao {
             cursor.close();
             db.close();
         }
-        return false;
+        return result;
     }
     /**
      * 查找一条黑名单号码的拦截模式
@@ -65,9 +65,11 @@ public class BlackNumberDao {
     }
     public boolean add(String number,String mode){
         // 首先判断数据库中是否已经存在该条数据， 防止添加重复的数据显示到黑名单列表中
-        if (find(number))
+        if (find(number)){
             // 如果数据库中已经存在要添加的数据，直接停止掉该方法的执行
             return false;
+        }
+
         SQLiteDatabase db = helper.getWritableDatabase();
         if (db.isOpen()) {
             // 执行添加数据的SQL语句

@@ -47,9 +47,8 @@ public class CallSmsSafeActivity extends Activity{
     //ProgressBar控件的父控件，用于控制子控件的显示（包括了ProgressBar）
     private LinearLayout ll_call_sms_loading;
     //用于接收子线程发送过来的消息，实现UI的更新
-    @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
-        public void handlerMessage(Message message){
+        public void handleMessage(Message message){
             switch (message.what){
                 case LOAD_DATA_FINISH://从数据库中加载黑名单号码完成
                     //将进度条及“正在加载数据...”隐藏
@@ -60,7 +59,7 @@ public class CallSmsSafeActivity extends Activity{
                     break;
 
             }
-        }
+        };
     };
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,6 +68,7 @@ public class CallSmsSafeActivity extends Activity{
         ll_call_sms_loading = findViewById(R.id.ll_call_sms_safe_loading);
         dao = new BlackNumberDao(this);
         //ll_call_sms_safe_loading控件中的所有子控件设置为可见（ProgressBar和“正在加载数据...”）
+        lv_call_sms_safe= findViewById(R.id.lv_call_sms_safe);
         ll_call_sms_loading.setVisibility(View.VISIBLE);
         //1、为lv_call_sms_safe注册一个上下文菜单
         registerForContextMenu(lv_call_sms_safe);

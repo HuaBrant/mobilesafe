@@ -28,6 +28,7 @@ public class Setup4Activity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setup4);
         sp = getSharedPreferences("config",MODE_PRIVATE);
+        cb_setup4_protect=findViewById(R.id.cb_setup4_protect);
         boolean protecting = sp.getBoolean("protecting",false);
         cb_setup4_protect.setChecked(protecting);
         cb_setup4_protect.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
