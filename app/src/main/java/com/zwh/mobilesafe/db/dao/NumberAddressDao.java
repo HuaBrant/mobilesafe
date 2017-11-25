@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 public class NumberAddressDao {
     public static String getAddress(String number){
         String address =number;
-        String path="/data/data/com.guoshisp.mobilesafe/files/address.db";
+        String path="/data/data/com.zwh.mobilesafe/files/address.db";
         SQLiteDatabase db=SQLiteDatabase.openDatabase(path,null,
                 SQLiteDatabase.OPEN_READONLY);
         if (db.isOpen()){

@@ -21,7 +21,7 @@ import java.util.Map;
  * Created by zwh on 2017/11/14 0014.
  */
 
-class CommonNumActivity extends Activity{
+public class CommonNumActivity extends Activity{
     protected static final String TAG = "CommonNumActivity";
     private ExpandableListView elv_common_num;//可扩展的ListView
     @Override

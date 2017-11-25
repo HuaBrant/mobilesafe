@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+
     <instrumentation
         android:name="android.test.InstrumentationTestRunner"
         android:targetPackage="com.zwh.mobilesafe" />
@@ -21,8 +22,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
-    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
-
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
 
     <application
         android:allowBackup="true"
@@ -31,72 +31,61 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.NoTitleBar">
-        <activity android:name=".MainActivity">
+        <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity">
+        </activity>
         <activity
             android:name=".AntiVirusActivity"
-            android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden">
-        </activity>
-        <activity android:name=".AppManagerActivity">
-        </activity>
-        <activity android:name=".Setup1Activity">
-        </activity>
-        <activity android:name=".Setup2Activity">
-        </activity>
-        <activity android:name=".Setup3Activity">
-        </activity>
-        <activity android:name=".Setup4Activity">
-        </activity>
-        <activity android:name=".AtoolsActivity">
-        </activity>
-        <activity android:name=".CallSmsSafeActivity">
-        </activity>
-        <activity android:name=".CleanCacheActivity">
-        </activity>
-        <activity android:name=".LostProtectedActivity">
-        </activity>
-        <activity android:name=".SettingCenterActivity">
-        </activity>
-        <activity android:name=".SlesctContactActivity">
-        </activity>
-         <activity android:name=".TaskManagerActivity">
-        </activity>
-         <activity android:name=".TrafficInfoActivity">
-        </activity>
-        <activity android:name=".DragViewActivity">
-        </activity>
-        <activity android:name=".EntryPwdActivity"
-           android:excludeFromRecents="true"
-            android:launchMode="singleInstance">
-        </activity>
-        <service android:name=".service.CallFirewallService">
-        </service>
-        <service android:name=".service.ShowCallLocationServer">
-        </service>
-        <service android:name=".service.WatchDogService">
-        </service>
-        <receiver android:name=".receiver.OutCallReceiver" >
-            <intent-filter android:priority="1000" >
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".AppManagerActivity"></activity>
+        <activity android:name=".Setup1Activity"></activity>
+        <activity android:name=".Setup2Activity"></activity>
+        <activity android:name=".Setup3Activity"></activity>
+        <activity android:name=".Setup4Activity"></activity>
+        <activity android:name=".AtoolsActivity"></activity>
+        <activity android:name=".CallSmsSafeActivity"></activity>
+        <activity android:name=".CleanCacheActivity"></activity>
+        <activity android:name=".LostProtectedActivity"></activity>
+        <activity android:name=".SettingCenterActivity"></activity>
+        <activity android:name=".SlesctContactActivity"></activity>
+        <activity android:name=".TaskManagerActivity"></activity>
+        <activity android:name=".TrafficInfoActivity"></activity>
+        <activity android:name=".DragViewActivity"></activity>
+        <activity android:name=".CommonNumActivity"></activity>
+        <activity android:name=".NumberQueryActivity"></activity>
+        <activity android:name=".AppLockActivity"></activity>
+        <activity
+            android:name=".EntryPwdActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"></activity>
+
+        <service android:name=".service.CallFirewallService"></service>
+        <service android:name=".service.ShowCallLocationServer"></service>
+        <service android:name=".service.WatchDogService"></service>
+
+        <receiver android:name=".receiver.OutCallReceiver">
+            <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".receiver.BootCompleteReceiver" >
-            <intent-filter android:priority="1000" >
+        <receiver android:name=".receiver.BootCompleteReceiver">
+            <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".receiver.SmsReceiver" >
-            <intent-filter android:priority="1000" >
+        <receiver android:name=".receiver.SmsReceiver">
+            <intent-filter android:priority="1000">
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".receiver.MyAdmin" >
+        <receiver android:name=".receiver.MyAdmin">
             <meta-data
                 android:name="android.app.device_admin"
                 android:resource="@xml/my_admin" />
@@ -105,11 +94,11 @@
                 <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
             </intent-filter>
         </receiver>
-        <provider
-            android:authorities="com.zwh.applock"
-            android:name=".provider.AppLockDBProvider">
 
-        </provider>
+        <provider
+            android:name=".provider.AppLockDBProvider"
+            android:authorities="com.zwh.applock"></provider>
+
     </application>
 
 </manifest>

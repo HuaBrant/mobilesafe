@@ -1,6 +1,5 @@
 package com.zwh.mobilesafe;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -9,7 +8,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,11 +42,11 @@ public class AtoolsActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.atools);
         initView();
+        pd = new ProgressDialog(this);
         pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 
     }
     // 拷贝数据库是一个相对耗时的操作，拷贝完成后，给主线程发送消息
-    @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
             // 无论拷贝是否成功，都需要关闭进度显示条
@@ -70,12 +68,12 @@ public class AtoolsActivity extends Activity implements View.OnClickListener {
     };
 
     private void loadCommNumUI() {
-        Intent intent = new Intent(this, NumberQueryActivity.class);
+        Intent intent = new Intent(this, CommonNumActivity.class);
         startActivity(intent);
     }
 
     private void loadQueryUI() {
-        Intent intent = new Intent(this, CommonNumActivity.class);
+        Intent intent = new Intent(this, NumberQueryActivity.class);
         startActivity(intent);
     }
 
@@ -84,7 +82,7 @@ public class AtoolsActivity extends Activity implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.tv_atools_address_query:// 号码归属地查询
                 // 创建出数据库要拷贝到的系统文件：data\data\包名\files\address.db
-                final File file = new File(getFilesDir(), "address.db");
+                final File file = new File(getFilesDir(), "naddress.db");
                 // 判断数据库是否存在，如果存在，则直接进入号码归属地的查询界面，否则，执行拷贝动作
                 if (file.exists() && file.length() > 0) {
                     // 数据库文件拷贝成功，进入查询号码归属地界面

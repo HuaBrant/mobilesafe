@@ -28,22 +28,25 @@ public class TrafficInfoProvider {
         List<TrafficInfo> trafficInfos = new ArrayList<TrafficInfo>();
         for (PackageInfo info: packageInfos) {
             String [] permissions = info.requestedPermissions;
-            for (String permission : permissions){
-                if ("android.permission.INTERNET".equals(permission)){
-                    TrafficInfo trafficInfo =new TrafficInfo();
-                    trafficInfo.setPackname(info.packageName);
-                    trafficInfo.setAppname(info.applicationInfo
-                            .loadLabel(packageManager).toString());
-                    trafficInfo.setIcon(info.applicationInfo
-                            .loadIcon(packageManager));
-                    int id=info.applicationInfo.uid;
-                    trafficInfo.setDowndata(TrafficStats.getUidRxBytes(id));
-                    trafficInfo.setUpdata(TrafficStats.getUidTxBytes(id));
-                    trafficInfos.add(trafficInfo);
-                    trafficInfo=null;
-                    break;
+            if (permissions !=null && permissions.length>0){
+                for (String permission : permissions){
+                    if ("android.permission.INTERNET".equals(permission)){
+                        TrafficInfo trafficInfo =new TrafficInfo();
+                        trafficInfo.setPackname(info.packageName);
+                        trafficInfo.setAppname(info.applicationInfo
+                                .loadLabel(packageManager).toString());
+                        trafficInfo.setIcon(info.applicationInfo
+                                .loadIcon(packageManager));
+                        int id=info.applicationInfo.uid;
+                        trafficInfo.setDowndata(TrafficStats.getUidRxBytes(id));
+                        trafficInfo.setUpdata(TrafficStats.getUidTxBytes(id));
+                        trafficInfos.add(trafficInfo);
+                        trafficInfo=null;
+                        break;
+                    }
                 }
             }
+
         }
         return trafficInfos;
     }

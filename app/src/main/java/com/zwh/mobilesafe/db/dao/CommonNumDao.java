@@ -19,7 +19,7 @@ public class CommonNumDao {
     public static int getGroupCount() {
         int count = 0;
         // 所要打开的数据库在手机系统中的位置
-        String path = "/data/data/com.guoshisp.mobilesafe/files/commonnum.db";
+        String path = "/data/data/com.zwh.mobilesafe/files/commonnum.db";
         // 打开数据库
         SQLiteDatabase db = SQLiteDatabase.openDatabase(path, null,
                 SQLiteDatabase.OPEN_READONLY);
@@ -42,7 +42,7 @@ public class CommonNumDao {
     public static List<String> getGroupNames() {
         // 用于存放各个分组的名字信息
         List<String> groupNames = new ArrayList<String>();
-        String path = "/data/data/com.guoshisp.mobilesafe/files/commonnum.db";
+        String path = "/data/data/com.zwh.mobilesafe/files/commonnum.db";
         SQLiteDatabase db = SQLiteDatabase.openDatabase(path, null,
                 SQLiteDatabase.OPEN_READONLY);
         if (db.isOpen()) {
@@ -68,7 +68,7 @@ public class CommonNumDao {
      */
     public static String getGroupNameByPosition(int groupPosition) {
         String name = null;
-        String path = "/data/data/com.guoshisp.mobilesafe/files/commonnum.db";
+        String path = "/data/data/com.zwh.mobilesafe/files/commonnum.db";
         // 因为classlist表中的name的id是从1开始的，而ExpandableListView中的id是从0开始的
         int newposition = groupPosition + 1;
         SQLiteDatabase db = SQLiteDatabase.openDatabase(path, null,
@@ -96,7 +96,7 @@ public class CommonNumDao {
      */
     public static int getChildrenCount(int groupPosition) {
         int count = 0;
-        String path = "/data/data/com.guoshisp.mobilesafe/files/commonnum.db";
+        String path = "/data/data/com.zwh.mobilesafe/files/commonnum.db";
         // 打开数据库
         SQLiteDatabase db = SQLiteDatabase.openDatabase(path, null,
                 SQLiteDatabase.OPEN_READONLY);
@@ -120,7 +120,7 @@ public class CommonNumDao {
     public static String getChildNameByPosition(int groupPosition,
                                                 int childPosition) {
         String result = null;
-        String path = "/data/data/com.guoshisp.mobilesafe/files/commonnum.db";
+        String path = "/data/data/com.zwh.mobilesafe/files/commonnum.db";
         SQLiteDatabase db = SQLiteDatabase.openDatabase(path, null,
                 SQLiteDatabase.OPEN_READONLY);
         int newGroupPosition = groupPosition + 1;
@@ -150,7 +150,7 @@ public class CommonNumDao {
     public static List<String> getChildNameByPosition(int groupPosition) {
         String result = null;
         List<String> results = new ArrayList<String>();
-        String path = "/data/data/com.guoshisp.mobilesafe/files/commonnum.db";
+        String path = "/data/data/com.zwh.mobilesafe/files/commonnum.db";
         SQLiteDatabase db = SQLiteDatabase.openDatabase(path, null,
                 SQLiteDatabase.OPEN_READONLY);
         int newGroupPosition = groupPosition + 1;

@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
 import android.text.format.Formatter;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,9 +43,10 @@ public class TrafficInfoActivity extends Activity {
     };
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.taffic_info);
+        provider = new TrafficInfoProvider(this);
         initView();
         new Thread() {
             @Override

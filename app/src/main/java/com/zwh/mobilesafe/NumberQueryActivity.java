@@ -17,7 +17,7 @@ import com.zwh.mobilesafe.db.dao.NumberAddressDao;
  * Created by zwh on 2017/11/14 0014.
  */
 
-class NumberQueryActivity extends Activity {
+public class NumberQueryActivity extends Activity {
     /**
      * 请输入查询的电话号码
      */

@@ -28,7 +28,7 @@ import java.util.List;
  * Created by zwh on 2017/11/14 0014.
  */
 
-class AppLockActivity extends Activity{
+public class AppLockActivity extends Activity{
     //展示手机中的所有应用
     private ListView lv_applock;
     //ProgressBar和TextView对应的父控件，用于控制ProgressBar和TextView的显示
@@ -90,7 +90,7 @@ class AppLockActivity extends Activity{
                 if(lockedPacknames.contains(packname)){//锁定状态
                     //dao.delete(packname);
                     //采用内容提供者来观察数据库中的数据变化
-                    Uri uri = Uri.parse("content://com.guoshisp.applock/DELETE");
+                    Uri uri = Uri.parse("content://com.zwh.applock/DELETE");
                     getContentResolver().delete(uri, null, new String[]{packname});
                     //解锁
                     iv.setImageResource(R.drawable.unlock);
@@ -98,7 +98,7 @@ class AppLockActivity extends Activity{
                     lockedPacknames.remove(packname);
                 }else{//未锁定状态
                     //dao.add(packname);
-                    Uri uri = Uri.parse("content://com.guoshisp.applock/ADD");
+                    Uri uri = Uri.parse("content://com.zwh.applock/ADD");
                     ContentValues values = new ContentValues();
                     values.put("packname", packname);
                     getContentResolver().insert(uri, values);

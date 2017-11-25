@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.zwh.mobilesafe.db.dao.AntiVirusDao;
 import com.zwh.mobilesafe.utils.Md5Encoder;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -80,6 +81,7 @@ public class AntiVirusActivity extends Activity{
         setContentView(R.layout.anti_virus);
         pm=getPackageManager();
         dao =new AntiVirusDao(this);
+        virusPackInfos = new ArrayList<PackageInfo>();
         tv_scan_status =findViewById(R.id.tv_scan_status2);
         iv_scan =findViewById(R.id.iv_scan);
         rotateAnimation =new RotateAnimation(0,360, Animation.RELATIVE_TO_SELF,1.0f,
